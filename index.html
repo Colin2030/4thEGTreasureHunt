@@ -137,7 +137,73 @@
         <h1>4th East Grinstead Scouts Treasure Hunt 2026</h1>
         <div class="dates">3pm Friday 27th March — 10pm Sunday 12th April</div>
         <p>Join us for a family-friendly adventure through East Grinstead town centre!</p>
-    </header>
+
+   </header>
+	<!-- Countdown Timer -->
+<div style="text-align: center; margin: 30px 0;">
+    <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 10px;">🏴‍☠️ The hunt begins in...</p>
+    
+    <div id="countdown" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+        <div style="background: #252525; border-radius: 10px; padding: 15px 20px; min-width: 70px;">
+            <div id="days" style="font-size: 2.5rem; font-weight: bold; color: #ce1126; line-height: 1;">--</div>
+            <div style="font-size: 0.8rem; color: #888; margin-top: 4px;">DAYS</div>
+        </div>
+        <div style="background: #252525; border-radius: 10px; padding: 15px 20px; min-width: 70px;">
+            <div id="hours" style="font-size: 2.5rem; font-weight: bold; color: #ce1126; line-height: 1;">--</div>
+            <div style="font-size: 0.8rem; color: #888; margin-top: 4px;">HOURS</div>
+        </div>
+        <div style="background: #252525; border-radius: 10px; padding: 15px 20px; min-width: 70px;">
+            <div id="minutes" style="font-size: 2.5rem; font-weight: bold; color: #ce1126; line-height: 1;">--</div>
+            <div style="font-size: 0.8rem; color: #888; margin-top: 4px;">MINS</div>
+        </div>
+        <div style="background: #252525; border-radius: 10px; padding: 15px 20px; min-width: 70px;">
+            <div id="seconds" style="font-size: 2.5rem; font-weight: bold; color: #ce1126; line-height: 1;">--</div>
+            <div style="font-size: 0.8rem; color: #888; margin-top: 4px;">SECS</div>
+        </div>
+    </div>
+
+    <!-- This message replaces the timer when the hunt is live -->
+    <div id="huntLive" style="display: none; background: #ce1126; color: white; 
+         padding: 20px 30px; border-radius: 12px; font-size: 1.4rem; 
+         font-weight: bold; margin-top: 10px;">
+        🎉 The Hunt is NOW LIVE! Good luck! 🏴‍☠️
+    </div>
+
+    <p style="color: #666; font-size: 0.8rem; margin-top: 12px;">
+        Hunt opens: Friday 27th March 2026 at 3:00pm GMT
+    </p>
+
+<script>
+    // ✅ Set your launch date/time here (ISO format, GMT = UTC)
+    const LAUNCH_DATE = new Date("2026-03-27T15:00:00Z");
+
+    function updateCountdown() {
+        const now = new Date();
+        const diff = LAUNCH_DATE - now;
+
+        if (diff <= 0) {
+            // Hunt is live — hide timer, show live message
+            document.getElementById("countdown").style.display = "none";
+            document.getElementById("huntLive").style.display = "block";
+            return;
+        }
+
+        const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent    = String(days).padStart(2, "0");
+        document.getElementById("hours").textContent   = String(hours).padStart(2, "0");
+        document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+        document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+    }
+
+    // Run immediately then update every second
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+</script>   
+</div>
 
     <div class="hero-card">
         <h2>Win a £100 Amazon Voucher!</h2>
@@ -183,6 +249,8 @@
             <strong>Solve & Win:</strong> Follow the clues to find the final codeword. Submit your entry code and codeword to enter the £100 draw! All entries must be received by 10pm Sunday 12th April.
         </div>
     </div>
+	
+	
 
    <h3 class="section-title">Our Sponsors</h3>
 <p>This event is made possible by the generous support of our local partners:</p>

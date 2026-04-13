@@ -10,7 +10,7 @@
             --bg-color: #088486;
             --card-bg: #205b41;
             --accent: #ce1126; /* Scout Red accent */
-            --text-main: #ffffff;
+            --text-main: #ffff;
             --text-dim: #b0b0b0;
             --stripe-blue: #635bff;
         }
@@ -135,119 +135,25 @@
             <img src="images/fleur-de-lis-marque-white-png (1).png" alt="4th EG Scouts">
         </div>
         <h1>4th East Grinstead Scouts Treasure Hunt 2026</h1>
-        <div class="dates">3pm Friday 27th March — 10pm Sunday 12th April</div>
-        <p>Join us for a family-friendly adventure through East Grinstead town centre!</p>
+        <div class="dates">27th March — 12th April 2026</div>
+        <p>Thank you to everyone who took part in our family-friendly adventure through East Grinstead town centre!</p>
 
    </header>
-	<!-- Countdown Timer -->
+	<!-- Hunt Closed Banner -->
 <div style="text-align: center; margin: 30px 0;">
-    <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 10px;">🏴‍☠️ The hunt begins in...</p>
-    
-    <div id="countdown" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-        <div style="background: #252525; border-radius: 10px; padding: 15px 20px; min-width: 70px;">
-            <div id="days" style="font-size: 2.5rem; font-weight: bold; color: #ce1126; line-height: 1;">--</div>
-            <div style="font-size: 0.8rem; color: #888; margin-top: 4px;">DAYS</div>
-        </div>
-        <div style="background: #252525; border-radius: 10px; padding: 15px 20px; min-width: 70px;">
-            <div id="hours" style="font-size: 2.5rem; font-weight: bold; color: #ce1126; line-height: 1;">--</div>
-            <div style="font-size: 0.8rem; color: #888; margin-top: 4px;">HOURS</div>
-        </div>
-        <div style="background: #252525; border-radius: 10px; padding: 15px 20px; min-width: 70px;">
-            <div id="minutes" style="font-size: 2.5rem; font-weight: bold; color: #ce1126; line-height: 1;">--</div>
-            <div style="font-size: 0.8rem; color: #888; margin-top: 4px;">MINS</div>
-        </div>
-        <div style="background: #252525; border-radius: 10px; padding: 15px 20px; min-width: 70px;">
-            <div id="seconds" style="font-size: 2.5rem; font-weight: bold; color: #ce1126; line-height: 1;">--</div>
-            <div style="font-size: 0.8rem; color: #888; margin-top: 4px;">SECS</div>
-        </div>
+    <div style="background: #ce1126; color: white; padding: 20px 30px; border-radius: 12px; font-size: 1.4rem; font-weight: bold;">
+        🏴‍☠️ The Hunt is Now Closed — Entries are no longer being accepted.
     </div>
-
-    <!-- This message replaces the timer when the hunt is live -->
-    <div id="huntLive" style="display: none; background: #ce1126; color: white; 
-         padding: 20px 30px; border-radius: 12px; font-size: 1.4rem; 
-         font-weight: bold; margin-top: 10px;">
-        🎉 The Hunt is NOW LIVE! Good luck! 🏴‍☠️
-    </div>
-
-    <p style="color: #666; font-size: 0.8rem; margin-top: 12px;">
-        Hunt opens: Friday 27th March 2026 at 3:00pm GMT
-    </p>
-
-<script>
-    // ✅ Set your launch date/time here (ISO format, GMT = UTC)
-    const LAUNCH_DATE = new Date("2026-03-27T15:00:00Z");
-
-    function updateCountdown() {
-        const now = new Date();
-        const diff = LAUNCH_DATE - now;
-
-        if (diff <= 0) {
-            // Hunt is live — hide timer, show live message
-            document.getElementById("countdown").style.display = "none";
-            document.getElementById("huntLive").style.display = "block";
-            return;
-        }
-
-        const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-        document.getElementById("days").textContent    = String(days).padStart(2, "0");
-        document.getElementById("hours").textContent   = String(hours).padStart(2, "0");
-        document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-        document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
-    }
-
-    // Run immediately then update every second
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-</script>   
 </div>
 
     <div class="hero-card">
-        <h2>Win a £100 Amazon Voucher!</h2>
-        <p>Complete the trail, solve the puzzles, and enter the prize draw.</p>
-        <p><strong>Entry Fee: £5.00</strong></p>
-        <a href="https://buy.stripe.com/8x228rbE14xx2PO2ISbo400" class="btn">
-            <i class="fa-solid fa-ticket"></i> Buy Entry Code
-        </a>
-        <p style="font-size: 0.8rem; color: var(--text-dim);">Secure payment via Stripe. Your unique code will be emailed instantly.</p>
-		<p style="font-size: 0.8rem; color: var(--text-dim);">Payment will be made through our sponsor, Meridian Edge Ltd</p>
-    </div>
-	
-	 <div class="hero-card">
-        <h2>Alternatively, just make a donation to the Scouts</h2>
-        <p>Click below to make a £5 donation. All money raised will go to 4th EG Scouts; enabling young people to have even more fantastic adventures through scouting. Thank you!</p>
-        <p><strong>This donation will NOT enable entry to the Treasure Hunt or the prize draw</strong></p>
-        <a href="https://buy.stripe.com/8x2eVd0Znd43aig3MWbo401" class="btn">
-            <i class="fa-solid fa-ticket"></i> Make a £5 Donation
-        </a>
-        <p style="font-size: 0.8rem; color: var(--text-dim);">Secure payment via Stripe.</p>
-		<p style="font-size: 0.8rem; color: var(--text-dim);">Payment will be made through our sponsor, Meridian Edge Ltd</p>
-    </div>
-
-    <h3 class="section-title">How It Works</h3>
-    
-    <div class="step">
-        <i class="fa-solid fa-1"></i>
-        <div>
-            <strong>Get Your Code:</strong> Purchase your entry above. You'll receive an email with your unique code and the link to the digital hunt.
-        </div>
-    </div>
-
-    <div class="step">
-        <i class="fa-solid fa-2"></i>
-        <div>
-            <strong>Start the Hunt:</strong> Head to East Grinstead town centre and begin at the car park opposite the Chequer Mead theatre. The hunt is browser-based (no app needed) and takes 60-90 minutes. The hunt will be open from 3pm on Friday 27th March and the route is suitable for pushchairs, dogs and children.
-        </div>
-    </div>
-
-    <div class="step">
-        <i class="fa-solid fa-3"></i>
-        <div>
-            <strong>Solve & Win:</strong> Follow the clues to find the final codeword. Submit your entry code and codeword to enter the £100 draw! All entries must be received by 10pm Sunday 12th April.
-        </div>
+        <h2>🎉 Thank You to Everyone Who Took Part!</h2>
+        <p>The 4th East Grinstead Scouts Treasure Hunt 2026 has now officially closed.</p>
+        <p>We are absolutely thrilled to announce that together, we raised:</p>
+        <p style="font-size: 2.5rem; font-weight: bold; color: #f5c842; margin: 10px 0;">💛 £150</p>
+        <p>for the <strong>4th East Grinstead Scouts</strong> — helping young people enjoy even more fantastic adventures through Scouting.</p>
+        <p style="margin-top: 20px;">A huge thank you to every family, individual, and team who explored East Grinstead town centre with us. Your support means the world to our Scout group. 🏴‍☠️🌟</p>
+        <p style="font-size: 0.9rem; color: var(--text-dim); margin-top: 15px;">A winner will be announced shortly. Watch this space!</p>
     </div>
 	
 	
